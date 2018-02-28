@@ -1,0 +1,5 @@
+D:\0-Project-Files\Facebook_projects\IntelligentOrganizer>\0-Installation\Java\jdk-9.0.1\bin\keytool -exportcert -alias androiddebugkey -keystore C:\Users\Sanjeev\.android\debug.keystore | \0-Installati
+on\OpenSSL-Win64\bin\openssl.exe sha1 -binary | \0-Installation\OpenSSL-Win64\bin\openssl.exe base64
+Enter keystore password:  mykeystore
+Bmce+9aHdOoVtE7fS3B07tfj7Bc=
+
