@@ -43,8 +43,10 @@ public class LoginActivity extends AppCompatActivity {
 
         callbackManager = CallbackManager.Factory.create();
 
+        SingletonCredentials.getSingletonCredentials();
+
         loginButton = findViewById(R.id.login_button);
-        loginButton.setReadPermissions("email", "user_birthday", "user_posts");
+        loginButton.setReadPermissions("email", "user_birthday", "user_posts","user_friends");
         loginButton.registerCallback(callbackManager, callback);
 
     }
@@ -65,8 +67,9 @@ public class LoginActivity extends AppCompatActivity {
                                 if(object.has("first_name"))
                                     firstName = object.getString("first_name");
 
+                                SingletonCredentials.setFbLoggedIn(true);
+                                SingletonCredentials.setUserName(firstName);
                                 Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-                                mainIntent.putExtra("name",firstName);
                                 startActivity(mainIntent);
                                 finish();
                             }
